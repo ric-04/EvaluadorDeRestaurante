@@ -99,5 +99,19 @@ namespace EvaluadorDeRestaurante.Controllers
             return View(restaurante);
         }
 
+        // GET:Restaurante/Details/{id}
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Restaurante restaurante = _db.Restaurantes.Find(id);
+            if (restaurante == null)
+            {
+                return HttpNotFound();
+            }
+            return View(restaurante);
+        }
     }
 }

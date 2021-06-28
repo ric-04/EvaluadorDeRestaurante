@@ -1,43 +1,42 @@
 ﻿@model EvaluadorDeRestaurante.Models.Restaurante
+
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
 }
 
-<h2>Delete</h2>
+<h2>Mas Informacion</h2>
 
-<h3>Esta seguro de que desea eliminar esta informacion?</h3>
 <div>
-    <h4>Informacion de Restaurante</h4>
-    <hr/>
+    <h4>Restaurante</h4>
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Nombre)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Direccion)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Direccion)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Puntaje)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Puntaje)
         </dd>
+
     </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Elimnar" class="btn btn-default"/>
-            @Html.ActionLink("Volver a Lista", "Index")
-        </div>
-    }
-
 </div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.IdRestaurante }) |
+    @Html.ActionLink("Volver a Lista", "Index")
+</p>

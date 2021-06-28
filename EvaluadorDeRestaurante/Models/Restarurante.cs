@@ -13,7 +13,7 @@ namespace EvaluadorDeRestaurante.Models
         public int IdRestaurante { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
-        public int Nota { get; set; }
+        public int Puntaje { get; set; }
     }
 
     public class RestauranteDbContext : DbContext

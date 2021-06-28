@@ -19,7 +19,7 @@
             @Html.DisplayNameFor(model => model.Direccion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nota)
+            @Html.DisplayNameFor(model => model.Puntaje)
         </th>
         <th></th>
     </tr>
@@ -33,7 +33,7 @@
                 @Html.DisplayFor(modelItem => item.Direccion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Nota)
+                @Html.DisplayFor(modelItem => item.Puntaje)
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.IdRestaurante }) | @*Just inserting object to pass information*@
@@ -43,5 +43,3 @@
         </tr>
     }
 </table>
-
-
