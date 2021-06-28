@@ -1,0 +1,47 @@
+﻿@model IEnumerable<EvaluadorDeRestaurante.Models.Restaurante>
+ 
+@{
+    ViewBag.Title = "Restaurantes";
+}
+
+<h2>Lista de Restaurantes</h2>
+
+<p>
+    @Html.ActionLink("Evaluar un Restaurante", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nota)
+        </th>
+        <th></th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdRestaurante }) | @*Just inserting object to pass information*@
+                @Html.ActionLink("Mas Informacion", "Details", new { id = item.IdRestaurante }) | 
+                @Html.ActionLink("Quitar", "Delete", new { id = item.IdRestaurante }) | 
+            </td>
+        </tr>
+    }
+</table>
+
+
